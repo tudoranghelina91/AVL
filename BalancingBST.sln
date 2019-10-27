@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binary.Search.Tree", "BinarySearchTree\Binary.Search.Tree.csproj", "{C510E032-3C24-4473-B03B-AB64921798DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSTDriverProgram", "BSTDriverProgram\BSTDriverProgram.csproj", "{B45A5F28-F434-4AF2-86A7-41988F2CCD21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C510E032-3C24-4473-B03B-AB64921798DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C510E032-3C24-4473-B03B-AB64921798DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C510E032-3C24-4473-B03B-AB64921798DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C510E032-3C24-4473-B03B-AB64921798DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B45A5F28-F434-4AF2-86A7-41988F2CCD21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B45A5F28-F434-4AF2-86A7-41988F2CCD21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B45A5F28-F434-4AF2-86A7-41988F2CCD21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B45A5F28-F434-4AF2-86A7-41988F2CCD21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0D8A426-FEF4-447E-AD74-6B7CA253ADE8}
+	EndGlobalSection
+EndGlobal
