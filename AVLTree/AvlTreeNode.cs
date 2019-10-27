@@ -1,24 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Binary.Search.Tree
+namespace AVLTree
 {
-    public class BinarySearchTreeNode
+    public class AvlTreeNode
     {
         public int Value { get; private set; }
         internal int BalanceFactor { get; private set; }
-        internal BinarySearchTreeNode _left;
-        internal BinarySearchTreeNode _right;
-        public BinarySearchTreeNode Left { get => _left; private set => _left = value; }
-        public BinarySearchTreeNode Right { get => _right; private set => _right = value; }
-        public BinarySearchTreeNode(int value)
+        internal AvlTreeNode _left;
+        internal AvlTreeNode _right;
+        public AvlTreeNode Left { get => _left; private set => _left = value; }
+        public AvlTreeNode Right { get => _right; private set => _right = value; }
+        public AvlTreeNode(int value)
         {
             Value = value;
         }
-        private int getDepth(BinarySearchTreeNode root)
+        private int getDepth(AvlTreeNode root)
         {
             if (root == null)
             {

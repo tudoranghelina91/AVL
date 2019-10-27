@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Binary.Search.Tree
+namespace AVLTree
 {
-    public class BinarySearchTree
+    public class AvlTree
     {
-        private BinarySearchTreeNode _root;
-        private BinarySearchTreeNode search(int value, BinarySearchTreeNode root)
+        private AvlTreeNode _root;
+        private AvlTreeNode search(int value, AvlTreeNode root)
         {
             if (root == null)
                 return null;
@@ -26,9 +22,9 @@ namespace Binary.Search.Tree
 
             return root;
         }
-        private BinarySearchTreeNode removeGreatestNode(ref BinarySearchTreeNode root)
+        private AvlTreeNode removeGreatestNode(ref AvlTreeNode root)
         {
-            BinarySearchTreeNode current;
+            AvlTreeNode current;
             if (root.Right == null)
             {
                 current = root;
@@ -41,9 +37,9 @@ namespace Binary.Search.Tree
                 return removeGreatestNode(ref root._right);
             }
         }
-        private void deleteRoot(ref BinarySearchTreeNode root)
+        private void deleteRoot(ref AvlTreeNode root)
         {
-            BinarySearchTreeNode current = root;
+            AvlTreeNode current = root;
             if (root.Left == null)
             {
                 root = root.Right;
@@ -63,7 +59,7 @@ namespace Binary.Search.Tree
 
             recalculateBalanceFactors(ref root);
         }
-        private void delete(ref BinarySearchTreeNode root, int value)
+        private void delete(ref AvlTreeNode root, int value)
         {
             if (root == null)
             {
@@ -97,29 +93,29 @@ namespace Binary.Search.Tree
             recalculateBalanceFactors(ref root);
 
         }
-        private void rotateRight(ref BinarySearchTreeNode root)
+        private void rotateRight(ref AvlTreeNode root)
         {
             if (root.Left != null)
             {
-                BinarySearchTreeNode tmp = root.Left;
+                AvlTreeNode tmp = root.Left;
                 root._left = tmp.Right;
                 tmp._right = root;
                 root = tmp;
                 recalculateBalanceFactors(ref root);
             }
         }
-        private void rotateLeft(ref BinarySearchTreeNode root)
+        private void rotateLeft(ref AvlTreeNode root)
         {
             if (root.Right != null)
             {
-                BinarySearchTreeNode tmp = root.Right;
+                AvlTreeNode tmp = root.Right;
                 root._right = tmp.Left;
                 tmp._left = root;
                 root = tmp;
                 recalculateBalanceFactors(ref root);
             }
         }
-        private void rebalance(ref BinarySearchTreeNode root)
+        private void rebalance(ref AvlTreeNode root)
         {
             // LL imbalance
             if (root.BalanceFactor > 1 && root.Value < root.Left.Value)
@@ -145,11 +141,11 @@ namespace Binary.Search.Tree
                 rotateLeft(ref root);
             }
         }
-        private void insert(ref BinarySearchTreeNode root, int value)
+        private void insert(ref AvlTreeNode root, int value)
         {
             if (root == null)
             {
-                root = new BinarySearchTreeNode(value);
+                root = new AvlTreeNode(value);
             }
 
             if (value < root.Value)
@@ -171,7 +167,7 @@ namespace Binary.Search.Tree
             }
             recalculateBalanceFactors(ref root);
         }
-        private void recalculateBalanceFactors(ref BinarySearchTreeNode root)
+        private void recalculateBalanceFactors(ref AvlTreeNode root)
         {
             if (root == null)
                 return;
@@ -183,7 +179,7 @@ namespace Binary.Search.Tree
             if (root.Right != null)
                 root.Right.SetBalanceFactor();
         }
-        private void clear(ref BinarySearchTreeNode root)
+        private void clear(ref AvlTreeNode root)
         {
             if (root.Left != null)
                 clear(ref root._left);
@@ -193,7 +189,7 @@ namespace Binary.Search.Tree
 
             root = null;
         }
-        private void preOrder(BinarySearchTreeNode root)
+        private void preOrder(AvlTreeNode root)
         {
             if (root != null)
             {
@@ -202,16 +198,16 @@ namespace Binary.Search.Tree
                 preOrder(root.Right);
             }
         }
-        public BinarySearchTreeNode Root
+        public AvlTreeNode Root
         { get => _root; set => _root = value; }
-        public BinarySearchTree(BinarySearchTreeNode root)
+        public AvlTree(AvlTreeNode root)
         {
             Root = root;
         }
-        public BinarySearchTree()
+        public AvlTree()
         {
         }
-        public BinarySearchTreeNode Search(int value)
+        public AvlTreeNode Search(int value)
         {
             return search(value, Root);
         }
